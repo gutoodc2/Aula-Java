@@ -23,7 +23,7 @@ public class MeuGeradorDeProvas {
         Scanner s = new Scanner(System.in);
         Prova p = new Prova();
 
-        System.out.print("Nome da Disciplina: ");
+        System.out.print("Nome da Disciplina seu idiota: ");
         p.setNomeDisciplina(s.nextLine());
 
         System.out.print("Local: ");

@@ -5,6 +5,11 @@
  */
 package meugeradordeprovas;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -12,29 +17,34 @@ import java.util.ArrayList;
  * @author gusta
  */
 public class Prova {
-    
+
     private String nomeDisciplina;
     private int peso;
     private String local;
     private String data;
     private ArrayList<Questao> listaQuestoes;
-    
-    public Prova(){
+
+    public Prova() {
         this.listaQuestoes = new ArrayList();
     }
-    
-    public String imprimirProva(){
-        
+
+    public String imprimirProva() {
+
         String prova = "\n\n";
-        
-        prova += "Nome:________________________" + "\t" + "Data:" + this.getData() + "\n";
-        prova += "Local:" + this.getLocal() + "\t" + "Peso:" + this.getPeso() + "\n";
-        
-        for(int i = 0; i<this.getListaQuestoes().size(); i++){
-            prova += "\n" + (i+1) + ")" + this.listaQuestoes.get(i).retornaQuestao();
+
+        try (PrintWriter pw = new PrintWriter("Prova.doc")) {
+            prova += "Nome:________________________" + "\t" + "Data:" + this.getData() + "\n";
+            prova += "Local:" + this.getLocal() + "\t" + "Peso:" + this.getPeso() + "\n";
+
+            for (int i = 0; i < this.getListaQuestoes().size(); i++) {
+                prova += "\n" + (i + 1) + ")" + this.listaQuestoes.get(i).retornaQuestao();
+            }
+
+            pw.println(prova);
+        } catch (IOException e) {
+            System.out.println("falha");
         }
-        
-        
+
         return prova;
     }
 
@@ -107,5 +117,5 @@ public class Prova {
     public void setListaQuestoes(ArrayList<Questao> listaQuestoes) {
         this.listaQuestoes = listaQuestoes;
     }
-        
+
 }

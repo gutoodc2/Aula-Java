@@ -5,6 +5,8 @@
  */
 package meugeradordeprovas;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -80,7 +82,15 @@ public class MeuGeradorDeProvas {
                 System.out.print("Opção inválida");
             }
         }
+        try (PrintWriter pw = new PrintWriter("Prova.doc")) {
+
+            pw.println(p.imprimirProva());
+
+        } catch (IOException e) {
+            System.out.println("falha");
+        }
+
         System.out.println(p.imprimirProva());
     }
-    
+
 }

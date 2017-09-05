@@ -32,7 +32,6 @@ public class Prova {
 
         String prova = "\n\n";
 
-        try (PrintWriter pw = new PrintWriter("Prova.doc")) {
             prova += "Nome:________________________" + "\t" + "Data:" + this.getData() + "\n";
             prova += "Local:" + this.getLocal() + "\t" + "Peso:" + this.getPeso() + "\n";
 
@@ -40,12 +39,8 @@ public class Prova {
                 prova += "\n" + (i + 1) + ")" + this.listaQuestoes.get(i).retornaQuestao();
             }
 
-            pw.println(prova);
-        } catch (IOException e) {
-            System.out.println("falha");
-        }
-
-        return prova;
+            return prova;
+        
     }
 
     /**

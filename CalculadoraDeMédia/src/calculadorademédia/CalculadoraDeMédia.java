@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,10 +23,18 @@ public class CalculadoraDeMédia extends Application {
 
     public void start(Stage stage) {
 
-        VBox orquestrador = new VBox();
-        orquestrador.setSpacing(5);
+        VBox orquestradorVbox = new VBox();
+        HBox orquestradorm1 = new HBox();
+        HBox orquestradorm2 = new HBox();
+        HBox orquestradorm3 = new HBox();
+        orquestradorVbox.setSpacing(5);
+        orquestradorVbox.setStyle("-fx-background-color: #babaca;");
+        
+        Label lbl1 = new Label("Sua nota da m1:");
         TextField m1 = new TextField("0");
+        Label lbl2 = new Label("Sua nota da m2:");
         TextField m2 = new TextField("0");
+        Label lbl3 = new Label("Sua nota da m3:");
         TextField m3 = new TextField("0");
         Label res = new Label("Pontos Restantes para passar: ");
         Button botao = new Button("Calcular");
@@ -43,14 +52,23 @@ public class CalculadoraDeMédia extends Application {
                 res.setText( "Pontos Restantes para passar: "+Resultado);
             }
         } );
+        
+        orquestradorm1.getChildren().add(lbl1);
+        orquestradorm1.getChildren().add(m1);
+        
+        orquestradorm2.getChildren().add(lbl2);
+        orquestradorm2.getChildren().add(m2);
+        
+        orquestradorm3.getChildren().add(lbl3);
+        orquestradorm3.getChildren().add(m3);
+        
+        orquestradorVbox.getChildren().add(orquestradorm1);
+        orquestradorVbox.getChildren().add(orquestradorm2);
+        orquestradorVbox.getChildren().add(orquestradorm3);
+        orquestradorVbox.getChildren().add(res);
+        orquestradorVbox.getChildren().add(botao);
 
-        orquestrador.getChildren().add(m1);
-        orquestrador.getChildren().add(m2);
-        orquestrador.getChildren().add(m3);
-        orquestrador.getChildren().add(res);
-        orquestrador.getChildren().add(botao);
-
-        Scene cena = new Scene(orquestrador, 300, 200);
+        Scene cena = new Scene(orquestradorVbox, 300, 250);
 
         stage.setScene(cena);
         stage.setTitle("Calculadora de Média");

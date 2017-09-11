@@ -28,13 +28,13 @@ public class CalculadoraDeMédia extends Application {
         HBox orquestradorm2 = new HBox();
         HBox orquestradorm3 = new HBox();
         orquestradorVbox.setSpacing(5);
-        orquestradorVbox.setStyle("-fx-background-color: #babaca;");
+        orquestradorVbox.setStyle("-fx-background-color: #FFFFFF;");
         
-        Label lbl1 = new Label("Sua nota da m1:");
+        Label lbl1 = new Label("Sua nota da m1: ");
         TextField m1 = new TextField("0");
-        Label lbl2 = new Label("Sua nota da m2:");
+        Label lbl2 = new Label("Sua nota da m2: ");
         TextField m2 = new TextField("0");
-        Label lbl3 = new Label("Sua nota da m3:");
+        Label lbl3 = new Label("Sua nota da m3: ");
         TextField m3 = new TextField("0");
         Label res = new Label("Pontos Restantes para passar: ");
         Button botao = new Button("Calcular");
@@ -68,7 +68,7 @@ public class CalculadoraDeMédia extends Application {
         orquestradorVbox.getChildren().add(res);
         orquestradorVbox.getChildren().add(botao);
 
-        Scene cena = new Scene(orquestradorVbox, 300, 250);
+        Scene cena = new Scene(orquestradorVbox, 250, 250);
 
         stage.setScene(cena);
         stage.setTitle("Calculadora de Média");

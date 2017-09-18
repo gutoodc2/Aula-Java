@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="195.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadoraimc.FXMLDocumentController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Seu peso:" textFill="#460be8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="51.0" text="Sua altura: " textFill="#09ff00">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="peso" layoutX="102.0" layoutY="15.0" />
+      <TextField fx:id="altura" layoutX="102.0" layoutY="52.0" />
+      <Button layoutX="100.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Calcular" textFill="#e10505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="251.0" layoutY="19.0" text="kg">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="56.0" text="m">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="resposta" alignment="CENTER" layoutX="4.0" layoutY="148.0" prefHeight="27.0" prefWidth="279.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

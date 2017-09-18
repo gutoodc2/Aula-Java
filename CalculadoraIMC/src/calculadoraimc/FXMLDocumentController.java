@@ -40,7 +40,7 @@ public class FXMLDocumentController implements Initializable {
     private TextField altura;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
+    private void handleButtonAction(ActionEvent event){
 
         double pesoDouble = Double.parseDouble(peso.getText());
         double alturaDouble = Double.parseDouble(altura.getText());
